@@ -1,0 +1,29 @@
+# Default values for pact-proker.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: pactfoundation/pact-broker
+  name: pact-broker
+  pullPolicy: IfNotPresent
+  restartPolicy: Always
+  port: 9292
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+appSettings:
+  basicAuthentication:
+    RWaccess:
+      enabled: false
+      username: pactRW
+      password: PaCtBr0k3rRW
+    ROaccess:
+      enabled: false
+      username: pactRO
+      password: PaCtBr0k3rRO
+
+service:
+  type: LoadBalancer
+  port: 80

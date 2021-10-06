@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ .Release.Name }}-deployment
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .Release.Name }}
+
+spec:
+  replicas: {{ .Values.replicaCount}}
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Release.Name }}
+    spec:
+      restartPolicy: {{ .Values.image.restartPolicy }}
+      containers:
+        - env:
+            - name: PACT_BROKER_DATABASE_USERNAME
+              value: postgres
+            - name: PACT_BROKER_DATABASE_PASSWORD
+              value: jemf9rAKgD
+            - name: PACT_BROKER_DATABASE_HOST
+              value: postgresql.pact.svc.cluster.local
+            - name: PACT_BROKER_DATABASE_NAME
+              value: postgres
+            {{- if .Values.appSettings.basicAuthentication.RWaccess.enabled }}
+            - name: PACT_BROKER_BASIC_AUTH_USERNAME
+              value: {{ .Values.appSettings.basicAuthentication.RWaccess.username}}
+            - name: PACT_BROKER_BASIC_AUTH_PASSWORD
+              value: {{ .Values.appSettings.basicAuthentication.RWaccess.password}}
+            {{- end }}
+            {{- if .Values.appSettings.basicAuthentication.ROaccess.enabled }}
+            - name: PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME
+              value: {{ .Values.appSettings.basicAuthentication.ROaccess.username}}
+            - name: PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD
+              value: {{ .Values.appSettings.basicAuthentication.ROaccess.password}}
+            {{- end }}
+          image: {{ .Values.image.repository }}
+          name: {{ .Values.image.name }}
+          ports:
+            - containerPort: {{ .Values.image.port }}
