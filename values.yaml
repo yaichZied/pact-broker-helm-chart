@@ -10,8 +10,6 @@ image:
   pullPolicy: IfNotPresent
   restartPolicy: Always
   port: 9292
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
 
 appSettings:
   basicAuthentication:
