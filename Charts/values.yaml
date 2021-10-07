@@ -25,3 +25,7 @@ appSettings:
 service:
   type: LoadBalancer
   port: 80
+
+
+postgresql:
+  enabled: true

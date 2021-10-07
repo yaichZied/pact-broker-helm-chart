@@ -2,5 +2,15 @@ apiVersion: v2
 name: pact-proker
 description: A Helm chart for Kubernetes to install Pact Broker
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "2.87.0.0"
+
+maintainers:
+  - name: Bilel Yahia
+    url: https://github.com/byahia
+
+dependencies:
+  - name: postgresql
+    condition: postgresql.enabled
+    repository: https://charts.bitnami.com/bitnami
+    version: 10.9.5
