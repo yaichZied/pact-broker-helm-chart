@@ -2,7 +2,7 @@ apiVersion: v2
 name: pact-proker
 description: A Helm chart for Kubernetes to install Pact Broker
 type: application
-version: 0.1.2
+version: 0.1.0
 appVersion: "2.87.0.0"
 
 maintainers:
