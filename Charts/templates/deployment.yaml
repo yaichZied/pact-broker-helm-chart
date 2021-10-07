@@ -22,6 +22,7 @@ spec:
       restartPolicy: {{ .Values.image.restartPolicy }}
       containers:
         - env:
+            {{- if .Values.appSettings.basicAuthentication.RWaccess.enabled }}
             - name: PACT_BROKER_DATABASE_USERNAME
               value: postgres
             - name: PACT_BROKER_DATABASE_PASSWORD
@@ -30,6 +31,7 @@ spec:
               value: postgresql.pact.svc.cluster.local
             - name: PACT_BROKER_DATABASE_NAME
               value: postgres
+            {{- end }}
             {{- if .Values.appSettings.basicAuthentication.RWaccess.enabled }}
             - name: PACT_BROKER_BASIC_AUTH_USERNAME
               value: {{ .Values.appSettings.basicAuthentication.RWaccess.username}}
