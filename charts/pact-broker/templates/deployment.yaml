@@ -29,6 +29,8 @@ spec:
               value: {{ .Release.Name }}-postgresql.{{ .Release.Namespace }}.svc.cluster.local
             - name: PACT_BROKER_DATABASE_NAME
               value: pact-broker-database
+            - name: PACT_BROKER_DATABASE_PASSWORD
+              value: jemf9rAKgD
             {{- end }}
             {{- if .Values.appSettings.basicAuthentication.RWaccess.enabled }}
             - name: PACT_BROKER_BASIC_AUTH_USERNAME
