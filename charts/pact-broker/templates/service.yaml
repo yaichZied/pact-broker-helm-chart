@@ -11,6 +11,6 @@ spec:
     - protocol: TCP
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.image.port }}
-  type: LoadBalancer
+  type: {{ .Values.service.type }}
   selector:
     app.kubernetes.io/name: {{ .Release.Name }}

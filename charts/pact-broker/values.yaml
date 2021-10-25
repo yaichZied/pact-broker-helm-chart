@@ -26,9 +26,16 @@ service:
   type: LoadBalancer
   port: 80
 
-
 postgresql:
   enabled: true
   postgresqlDatabase: pact
   postgresqlUsername: postgres
   postgresqlPassword: jemf9rAKgD
+
+externalDB:
+  enabled: false
+  endpoint: ""
+  port: 5432
+  databaseName: pact
+  userName: pactDbUser
+  password: pactDbPassword
