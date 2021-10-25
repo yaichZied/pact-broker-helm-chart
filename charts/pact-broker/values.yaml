@@ -29,3 +29,4 @@ service:
 
 postgresql:
   enabled: true
+  postgresqlPassword: jemf9rAKgD
