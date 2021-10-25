@@ -28,7 +28,7 @@ spec:
             - name: PACT_BROKER_DATABASE_HOST
               value: {{ .Release.Name }}-postgresql.{{ .Release.Namespace }}.svc.cluster.local
             - name: PACT_BROKER_DATABASE_NAME
-              value: pact-broker-database
+              value: pact
             - name: PACT_BROKER_DATABASE_PASSWORD
               value: jemf9rAKgD
             {{- end }}

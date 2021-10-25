@@ -29,4 +29,6 @@ service:
 
 postgresql:
   enabled: true
+  postgresqlDatabase: pact
+  postgresqlUsername: postgres
   postgresqlPassword: jemf9rAKgD
