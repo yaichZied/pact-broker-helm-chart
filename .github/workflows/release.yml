@@ -27,7 +27,7 @@ jobs:
       - name: Generate documentation
         run: |
           pip install frigate
-          frigate gen ./charts/pact-broker > ./charts/README.md
+          frigate gen ./charts/pact-broker --no-deps > ./charts/README.md
           ls -alh
 
       - name: Run chart-releaser
