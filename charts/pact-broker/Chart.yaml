@@ -34,7 +34,7 @@ long_description: |
 
 home: https://byahia.github.io/pact-broker-helm-chart/
 sources:
-  -https://github.com/byahia/pact-broker-helm-chart/tree/main/charts/pact-broker
+  - https://github.com/byahia/pact-broker-helm-chart/tree/main/charts/pact-broker
 
 maintainers:
   - name: Bilel Yahia
