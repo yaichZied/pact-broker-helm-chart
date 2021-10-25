@@ -19,6 +19,12 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Generate documentation
+        run: |
+          pip install frigate
+          frigate gen ./charts/pact-broker > ./charts/README.md
+          ls -alh
+
       - name: Install Helm
         uses: azure/setup-helm@v1
         with:
