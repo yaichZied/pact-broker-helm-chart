@@ -4,6 +4,31 @@ Pact-proker
 
 A Helm chart for Kubernetes to install Pact Broker
 
+This chart will deploy the following a running instance of pact-broker, and optionally a postgresql database instance running on the same namespace.
+
+## Installation
+### Add the helm repository
+```
+$ helm repo add byahia http://byahia.github.io/pact-broker-helm-chart/
+```
+### From source
+```console
+$ git clone https://github.com/byahia/pact-broker-helm-chart
+$ cd ./charts/pact-broker
+$ helm dep update
+$ helm install --name myname --namespace mynamespace pact
+```
+## Development
+Any help is welcome. Feel free to fork the repo and submit improvement and/or bugfixes.
+
+### Testing
+```console
+$ make test
+helm lint pact
+==> Linting pact
+Lint OK
+1 chart(s) linted, no failures
+```
 
 ## Configuration
 
