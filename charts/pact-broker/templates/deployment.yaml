@@ -27,6 +27,8 @@ spec:
               value: {{ .Values.postgresql.postgresqlUsername }}
             - name: PACT_BROKER_DATABASE_HOST
               value: {{ .Release.Name }}-postgresql.{{ .Release.Namespace }}.svc.cluster.local
+            - name: PACT_BROKER_DATABASE_PORT
+              value: { { .Values.postgresql.port | quote } }
             - name: PACT_BROKER_DATABASE_NAME
               value: {{ .Values.postgresql.postgresqlDatabase }}
             - name: PACT_BROKER_DATABASE_PASSWORD
@@ -38,7 +40,7 @@ spec:
             - name: PACT_BROKER_DATABASE_HOST
               value: {{ .Values.externalDB.endpoint }}
             - name: PACT_BROKER_DATABASE_PORT
-              value: {{ .Values.externalDB.port }}
+              value: {{ .Values.externalDB.port | quote }}
             - name: PACT_BROKER_DATABASE_NAME
               value: {{ .Values.externalDB.databaseName }}
             - name: PACT_BROKER_DATABASE_PASSWORD
