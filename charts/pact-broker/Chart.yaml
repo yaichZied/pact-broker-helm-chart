@@ -12,6 +12,7 @@ long_description: |
   ### Add the helm repository
   ```
   $ helm repo add byahia http://byahia.github.io/pact-broker-helm-chart/
+  $ helm install pact byahia/pact-broker-helm-chart
   ```
   ### From source
   ```console
