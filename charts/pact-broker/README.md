@@ -37,29 +37,30 @@ The following table lists the configurable parameters of the Pact-proker chart a
 | Parameter                | Description             | Default        |
 | ------------------------ | ----------------------- | -------------- |
 | `replicaCount` |  | `1` |
-| `image.repository` |  | `"pactfoundation/pact-broker"` |
-| `image.name` |  | `"pact-broker"` |
-| `image.pullPolicy` |  | `"IfNotPresent"` |
-| `image.restartPolicy` |  | `"Always"` |
-| `image.port` |  | `9292` |
-| `appSettings.basicAuthentication.RWaccess.enabled` |  | `false` |
-| `appSettings.basicAuthentication.RWaccess.username` |  | `"pactRW"` |
-| `appSettings.basicAuthentication.RWaccess.password` |  | `"PaCtBr0k3rRW"` |
-| `appSettings.basicAuthentication.ROaccess.enabled` |  | `false` |
-| `appSettings.basicAuthentication.ROaccess.username` |  | `"pactRO"` |
-| `appSettings.basicAuthentication.ROaccess.password` |  | `"PaCtBr0k3rRO"` |
-| `service.type` |  | `"LoadBalancer"` |
-| `service.port` |  | `80` |
-| `postgresql.enabled` |  | `true` |
-| `postgresql.postgresqlDatabase` |  | `"pact"` |
-| `postgresql.postgresqlUsername` |  | `"postgres"` |
-| `postgresql.postgresqlPassword` |  | `"jemf9rAKgD"` |
-| `externalDB.enabled` |  | `false` |
-| `externalDB.endpoint` |  | `""` |
-| `externalDB.port` |  | `5432` |
-| `externalDB.databaseName` |  | `"pact"` |
-| `externalDB.userName` |  | `"pactDbUser"` |
-| `externalDB.password` |  | `"pactDbPassword"` |
+| `image.repository` | docker image repository | `"pactfoundation/pact-broker"` |
+| `image.name` | docker image name | `"pact-broker"` |
+| `image.pullPolicy` | kubernetes pull policy | `"IfNotPresent"` |
+| `image.restartPolicy` | kubernetes restart policy | `"Always"` |
+| `image.port` | docker image port | `9292` |
+| `appSettings.basicAuthentication.RWaccess.enabled` | Whether to enable or not a Read/Write access account | `false` |
+| `appSettings.basicAuthentication.RWaccess.username` | Read/write account username | `"pactRW"` |
+| `appSettings.basicAuthentication.RWaccess.password` | Read/write account password | `"PaCtBr0k3rRW"` |
+| `appSettings.basicAuthentication.ROaccess.enabled` | Whether to enable or not a Read only access account | `false` |
+| `appSettings.basicAuthentication.ROaccess.username` | Read only account username | `"pactRO"` |
+| `appSettings.basicAuthentication.ROaccess.password` | Read only account username | `"PaCtBr0k3rRO"` |
+| `service.type` | Service type. Cloud be "LoadBalancer", "ClusterIp", "NodePort" | `"LoadBalancer"` |
+| `service.port` | Internal service default port | `80` |
+| `postgresql.enabled` | Whether to install or not a postgresql database as dependency | `true` |
+| `postgresql.postgresqlDatabase` | Default postgresql database name | `"pact"` |
+| `postgresql.postgresqlPort` | Default postgresql database port | `5432` |
+| `postgresql.postgresqlUsername` | Default postgresql database username | `"postgres"` |
+| `postgresql.postgresqlPassword` | Default postgresql database password | `"jemf9rAKgD"` |
+| `externalDB.enabled` | Whether to use or not an external database | `false` |
+| `externalDB.endpoint` | External database endpoint | `""` |
+| `externalDB.port` | External database port | `5432` |
+| `externalDB.databaseName` | External database name | `"pact"` |
+| `externalDB.userName` | External database username | `"pactDbUser"` |
+| `externalDB.password` | External database password | `"pactDbPassword"` |
 
 
 

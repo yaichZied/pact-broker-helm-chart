@@ -5,37 +5,38 @@
 replicaCount: 1
 
 image:
-  repository: pactfoundation/pact-broker
-  name: pact-broker
-  pullPolicy: IfNotPresent
-  restartPolicy: Always
-  port: 9292
+  repository: pactfoundation/pact-broker # docker image repository
+  name: pact-broker # docker image name
+  pullPolicy: IfNotPresent # kubernetes pull policy
+  restartPolicy: Always # kubernetes restart policy
+  port: 9292 # docker image port
 
 appSettings:
   basicAuthentication:
     RWaccess:
-      enabled: false
-      username: pactRW
-      password: PaCtBr0k3rRW
+      enabled: false # Whether to enable or not a Read/Write access account
+      username: pactRW # Read/write account username
+      password: PaCtBr0k3rRW # Read/write account password
     ROaccess:
-      enabled: false
-      username: pactRO
-      password: PaCtBr0k3rRO
+      enabled: false # Whether to enable or not a Read only access account
+      username: pactRO # Read only account username
+      password: PaCtBr0k3rRO # Read only account username
 
 service:
-  type: LoadBalancer
-  port: 80
+  type: LoadBalancer # Service type. Cloud be "LoadBalancer", "ClusterIp", "NodePort"
+  port: 80 # Internal service default port
 
 postgresql:
-  enabled: true
-  postgresqlDatabase: pact
-  postgresqlUsername: postgres
-  postgresqlPassword: jemf9rAKgD
+  enabled: true # Whether to install or not a postgresql database as dependency
+  postgresqlDatabase: pact # Default postgresql database name
+  postgresqlPort: 5432 # Default postgresql database port
+  postgresqlUsername: postgres # Default postgresql database username
+  postgresqlPassword: jemf9rAKgD # Default postgresql database password
 
 externalDB:
-  enabled: false
-  endpoint: ""
-  port: 5432
-  databaseName: pact
-  userName: pactDbUser
-  password: pactDbPassword
+  enabled: false # Whether to use or not an external database
+  endpoint: "" # External database endpoint
+  port: 5432 # External database port
+  databaseName: pact # External database name
+  userName: pactDbUser # External database username
+  password: pactDbPassword # External database password
