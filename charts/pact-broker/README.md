@@ -10,6 +10,7 @@ This chart will deploy the following a running instance of pact-broker, and opti
 ### Add the helm repository
 ```
 $ helm repo add byahia http://byahia.github.io/pact-broker-helm-chart/
+$ helm install pact byahia/pact-broker-helm-chart
 ```
 ### From source
 ```console
@@ -36,7 +37,7 @@ The following table lists the configurable parameters of the Pact-proker chart a
 
 | Parameter                | Description             | Default        |
 | ------------------------ | ----------------------- | -------------- |
-| `replicaCount` |  | `1` |
+| `replicaCount` | Number of pod replicas to create | `1` |
 | `image.repository` | docker image repository | `"pactfoundation/pact-broker"` |
 | `image.name` | docker image name | `"pact-broker"` |
 | `image.pullPolicy` | kubernetes pull policy | `"IfNotPresent"` |
