@@ -10,6 +10,9 @@ image:
   restartPolicy: Always # kubernetes restart policy
   port: 9292 # docker image port
 
+global:
+  annotations: {} # global annotations
+
 appSettings:
   basicAuthentication:
     RWaccess:
@@ -24,6 +27,10 @@ appSettings:
 service:
   type: LoadBalancer # Service type. Cloud be "LoadBalancer", "ClusterIp", "NodePort"
   port: 80 # Internal service default port
+  annotations: {} # Service annotations
+
+deployment:
+  annotations: {} # Deployment annotations
 
 postgresql:
   enabled: true # Whether to install or not a postgresql database as dependency

@@ -43,6 +43,7 @@ The following table lists the configurable parameters of the Pact-proker chart a
 | `image.pullPolicy` | kubernetes pull policy | `"IfNotPresent"` |
 | `image.restartPolicy` | kubernetes restart policy | `"Always"` |
 | `image.port` | docker image port | `9292` |
+| `global.annotations` | global annotations | `{}` |
 | `appSettings.basicAuthentication.RWaccess.enabled` | Whether to enable or not a Read/Write access account | `false` |
 | `appSettings.basicAuthentication.RWaccess.username` | Read/write account username | `"pactRW"` |
 | `appSettings.basicAuthentication.RWaccess.password` | Read/write account password | `"PaCtBr0k3rRW"` |
@@ -51,6 +52,8 @@ The following table lists the configurable parameters of the Pact-proker chart a
 | `appSettings.basicAuthentication.ROaccess.password` | Read only account username | `"PaCtBr0k3rRO"` |
 | `service.type` | Service type. Cloud be "LoadBalancer", "ClusterIp", "NodePort" | `"LoadBalancer"` |
 | `service.port` | Internal service default port | `80` |
+| `service.annotations` | Service annotations | `{}` |
+| `deployment.annotations` | Deployment annotations | `{}` |
 | `postgresql.enabled` | Whether to install or not a postgresql database as dependency | `true` |
 | `postgresql.postgresqlDatabase` | Default postgresql database name | `"pact"` |
 | `postgresql.postgresqlPort` | Default postgresql database port | `5432` |

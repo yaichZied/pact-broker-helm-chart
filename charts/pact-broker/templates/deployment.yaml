@@ -4,6 +4,11 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment
   namespace: {{ .Release.Namespace }}
+  annotations:
+    {{ - include "global.annotations" $ | nindent 4 }}
+    {{ - if .deployment.annotations - }}
+    {{ - toYaml .deployment.annotations | nindent 4 }}
+    {{ - end }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
 
@@ -16,6 +21,9 @@ spec:
       app.kubernetes.io/name: {{ .Release.Name }}
   template:
     metadata:
+      {{ - if .deployment.annotations - }}
+      {{ - toYaml .deployment.annotations | nindent 4 }}
+      {{ - end }}
       labels:
         app.kubernetes.io/name: {{ .Release.Name }}
     spec:
