@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     {{ - include "global.annotations" $ | nindent 4 }}
-    {{ - if .service.annotations - }}
+    {{ - if .service.annotations }}
     {{ - toYaml .service.annotations | nindent 4 }}
     {{ - end }}
   labels:
