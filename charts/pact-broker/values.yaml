@@ -10,9 +10,6 @@ image:
   restartPolicy: Always # kubernetes restart policy
   port: 9292 # docker image port
 
-global:
-  annotations: {} # global annotations
-
 appSettings:
   basicAuthentication:
     RWaccess:

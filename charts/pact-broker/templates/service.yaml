@@ -4,10 +4,9 @@ metadata:
   name: {{ .Release.Name }}-service
   namespace: {{ .Release.Namespace }}
   annotations:
-    {{ - include "global.annotations" $ | nindent 4 }}
-    {{ - if .service.annotations }}
-    {{ - toYaml .service.annotations | nindent 4 }}
-    {{ - end }}
+    {{ if .Values.service.annotations }}
+    {{ toYaml .Values.service.annotations | nindent 4 }}
+    {{ end }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
 
