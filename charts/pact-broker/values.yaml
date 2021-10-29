@@ -30,7 +30,7 @@ deployment:
   annotations: {} # Deployment annotations
 
 postgresql:
-  enabled: true # Whether to install or not a postgresql database as dependency
+  enabled: false # Whether to install or not a postgresql database as dependency
   postgresqlDatabase: pact # Default postgresql database name
   postgresqlPort: 5432 # Default postgresql database port
   postgresqlUsername: postgres # Default postgresql database username
