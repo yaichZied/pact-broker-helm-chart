@@ -43,3 +43,6 @@ externalDB:
   databaseName: pact # External database name
   userName: pactDbUser # External database username
   password: pactDbPassword # External database password
+
+envVariables:
+  allowDangerousContractModification: 'true'

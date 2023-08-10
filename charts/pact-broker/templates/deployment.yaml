@@ -65,6 +65,8 @@ spec:
             - name: PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD
               value: {{ .Values.appSettings.basicAuthentication.ROaccess.password}}
             {{- end }}
+            - name: PACT_BROKER_ALLOW_DANGEROUS_CONTRACT_MODIFICATION
+              value: {{ .Values.envVariables.allowDangerousContractModification | quote}}
           image: {{ .Values.image.repository }}
           name: {{ .Values.image.name }}
           ports:
